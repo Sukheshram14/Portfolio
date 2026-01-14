@@ -21,7 +21,7 @@ A premium, immersive, and high-performance personal portfolio website built with
 - **Scroll Reveal**: Sections elegantly slide and fade into focus using `IntersectionObserver`.
 
 ### 🛠️ Functional Integrations
-- **Fail-safe Contact Form**: Uses a direct `mailto:` redirection for 100% reliable contact without needing external API keys.
+- **Secure AJAX Contact Form**: Integrated with **Web3Forms** for seamless messages and protected by **hCaptcha** to block spam.
 - **GDrive Certificate Previewer**: Automatically converts Google Drive links into high-resolution direct previews in a glassmorphism modal.
 
 ---
@@ -51,6 +51,7 @@ Open `assets/data.json` to manage all site content:
 - **Bio**: Update your professional journey.
 - **Skills**: Add or remove technologies.
 - **Projects**: Link your GitHub repositories and live demos.
+- **Contact Key**: Update `site.contactKey` with your **Web3Forms Access Key** to receive messages.
 - **Certificates**: Add Google Drive links for automated previewing.
 
 ### 2. Run Locally
