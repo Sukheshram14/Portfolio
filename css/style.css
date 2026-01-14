@@ -1376,3 +1376,37 @@ textarea:focus {
 .hidden {
     display: none !important;
 }
+/* =========================================
+   hCAPTCHA STYLING
+   ========================================= */
+.h-captcha {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Ensure iframe fits container on mobile */
+.h-captcha iframe {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* hCaptcha Styling */
+.h-captcha {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+/* On mobile, center it if needed */
+@media (max-width: 768px) {
+    .h-captcha {
+        justify-content: center;
+    }
+}
