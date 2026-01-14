@@ -1,0 +1,467 @@
+{
+    "site": {
+        "title": "Sukhesh Ram | AI-Augmented Developer",
+        "logoText": "SukheshRam.Dev",
+        "footerText": "© 2026 S Sukhesh Ram. Orchestrating Code with AI.",
+        "contactKey": "afd7360a-6e1e-4984-8d25-485187432a47"
+    },
+    "navigation": [
+        {
+            "label": "Home",
+            "link": "#home"
+        },
+        {
+            "label": "About",
+            "link": "#about"
+        },
+        {
+            "label": "Journey",
+            "link": "#services"
+        },
+        {
+            "label": "Skills",
+            "link": "#skills"
+        },
+        {
+            "label": "Projects",
+            "link": "#projects"
+        },
+        {
+            "label": "Certificates",
+            "link": "#certificates"
+        },
+        {
+            "label": "Contact",
+            "link": "#contact"
+        }
+    ],
+    "home": {
+        "name": "S Sukhesh Ram",
+        "tagline": "AI-AUGMENTED DEVELOPER",
+        "buttons": [
+            {
+                "text": "View Work",
+                "link": "#projects"
+            },
+            {
+                "text": "Contact Me",
+                "link": "#contact"
+            }
+        ],
+        "sliderImages": [
+            "assets/images/eco-commerce.png",
+            "assets/images/energy-dashboard.png",
+            "assets/images/nature-player.png"
+        ]
+    },
+    "about": {
+        "bio": "A modern developer and AI-augmented technologist specializing in rapid prototyping and high-speed digital builds. I bridge the gap between complex logic and visual design by leveraging AI to orchestrate the MERN stack, ensuring that every system is built with efficiency, precision, and a focus on clean architecture.",
+        "objective": "Transforming complex ideas into functional realities at the speed of thought.",
+        "image": "assets/images/user-profile.jpg",
+        "resumeLink": "#"
+    },
+    "timeline": [
+        {
+            "type": "experience",
+            "title": "MERN Stack Intern",
+            "org": "UptoSkills, Delhi",
+            "year": "3 Months",
+            "icon": "💻"
+        },
+        {
+            "type": "experience",
+            "title": "Frontend Intern",
+            "org": "Edunet Foundation",
+            "year": "1 Month",
+            "icon": "🎨"
+        },
+        {
+            "type": "achievement",
+            "title": "Global Rank #2,626",
+            "org": "TCS CodeVita Season 12",
+            "year": "Top 0.5%",
+            "icon": "🏆"
+        },
+        {
+            "type": "achievement",
+            "title": "3rd Place",
+            "org": "CASTILO-25 Hackathon",
+            "year": "2024",
+            "icon": "🚀"
+        }
+    ],
+    "skills": {
+        "Strategic Logic": [
+            {
+                "name": "Problem Decomposition",
+                "level": "High Proficiency"
+            },
+            {
+                "name": "Logic & Algorithms (Java/Python)",
+                "level": "Core Foundation"
+            },
+            {
+                "name": "System Architecture",
+                "level": "Conceptual"
+            }
+        ],
+        "AI-Driven Development": [
+            {
+                "name": "MERN Stack Orchestration",
+                "level": "AI-Augmented"
+            },
+            {
+                "name": "Prompt Engineering",
+                "level": "Expert"
+            },
+            {
+                "name": "Rapid Prototyping",
+                "level": "Advanced"
+            },
+            {
+                "name": "AI Debugging & Refactoring",
+                "level": "High Speed"
+            }
+        ],
+        "Professional Agility": [
+            {
+                "name": "Solution-Oriented Research",
+                "level": "Expert"
+            },
+            {
+                "name": "Git & GitHub Workflow",
+                "level": "Proficient"
+            },
+            {
+                "name": "Creative Collaboration",
+                "level": "High Performance"
+            }
+        ]
+    },
+    "projects": [
+        {
+            "title": "Travera",
+            "description": "AI-Powered Personalized Travel Concierge. Generates complete day-by-day itineraries using Google Gemini AI, featuring interactive maps, weather integration, and offline PWA support.",
+            "technologies": "React.js, Groq AI, MongoDB, MapLibre",
+            "image": "assets/images/travera.jpg",
+            "link": "https://github.com/Sukheshram14/Travel_Planner",
+            "liveLink": "https://travel-planner-sooty-pi.vercel.app/"
+        },
+        {
+            "title": "CodeDuel",
+            "description": "Real-Time 1v1 Coding Battle Platform. MERN app with WebSockets for competitive coding duels.",
+            "technologies": "MERN, WebSockets, Node.js",
+            "image": "assets/images/codeduel.png",
+            "link": "https://github.com/Sukheshram14/CodeDuel",
+            "liveLink": "https://code-duel-ruddy.vercel.app"
+        },
+        {
+            "title": "Career Guidance ML",
+            "description": "ML-powered recommendation system guiding students to career paths using Scikit-learn.",
+            "technologies": "Python, Machine Learning",
+            "image": "assets/images/career_guidance.png",
+            "link": "https://github.com/Sukheshram14/Career-Guidance",
+            "liveLinks": [
+                {
+                    "text": "Streamlit App",
+                    "link": "https://one-stop-career-guidance.streamlit.app/"
+                },
+                {
+                    "text": "Vercel App",
+                    "link": "https://career-guidance-pi.vercel.app/"
+                }
+            ]
+        },
+        {
+            "title": "Portfolio Website V1",
+            "description": "Personal showcase built with React.js and Vite, highlighting skills and achievements.",
+            "technologies": "React, Vite, UI/UX",
+            "image": "assets/images/portfolio_website.png",
+            "link": "https://github.com/Sukheshram14/Sukhesh-Ram-Portfolio",
+            "liveLink": "https://sukhesh-ram-portfolio.vercel.app/"
+        },
+        {
+            "title": "Quote Vault",
+            "description": "A React-based application that fetches quotes from a public API and displays them dynamically with a clean, responsive UI built using Tailwind CSS.",
+            "technologies": "React.js, JavaScript, REST API, Tailwind CSS",
+            "image": "assets/images/quote_vault.png",
+            "link": "https://github.com/Sukheshram14/Quote-Vault",
+            "liveLink": "https://quote-vault-eight.vercel.app/"
+        },
+        {
+            "title": "Clever FOX",
+            "description": "Modern, responsive multipage website focused on clean structure and smooth animations.",
+            "technologies": "HTML, CSS, JavaScript, UX",
+            "image": "assets/images/clever_fox.png",
+            "link": "https://github.com/Sukheshram14/Clever-FOX---Website",
+            "liveLink": "https://sukheshram14.github.io/Clever-FOX---Website/"
+        },
+        {
+            "title": "Sentiment Analysis",
+            "description": "AI-Powered Dashboard visualizing real-time emotion metrics from BERT models.",
+            "technologies": "React.js, BERT, Tailwind, Analytics",
+            "image": "assets/images/sentiment_analysis.png",
+            "link": "https://github.com/Sukheshram14/CAS13_AIML03"
+        },
+        {
+            "title": "DSA Repository",
+            "description": "Core Data Structures & Algorithms solutions implemented in Java (Sorting, DP, Recursion).",
+            "technologies": "Java, Algorithms, DSA",
+            "image": "assets/images/dsa_repository.png",
+            "link": "https://github.com/Sukheshram14/DSA"
+        },
+        {
+            "title": "URL Shortener",
+            "description": "Lightweight, secure URL shortening service in Java using efficient string hashing.",
+            "technologies": "Java, Core Java, Hashing",
+            "image": "assets/images/url_shortener.png",
+            "link": "https://github.com/Sukheshram14/Java-MiniProject-UrlShortener"
+        },
+        {
+            "title": "Auth System",
+            "description": "Secure authentication system using Node.js, Express, and MongoDB with JWT sessions.",
+            "technologies": "Node.js, Express.js, JWT",
+            "image": "assets/images/auth_system.png",
+            "link": "https://github.com/Sukheshram14/LoginAndAuthenticationSystem"
+        },
+        {
+            "title": "Team Nebula",
+            "description": "Collaborative AI research analyzing datasets and visualizations using Jupyter Notebooks.",
+            "technologies": "AI/ML, Research, Jupyter",
+            "image": "assets/images/team_nebula.png",
+            "link": "https://github.com/Sukheshram14/TEAM-NEBULA"
+        },
+        {
+            "title": "GitHub Training",
+            "description": "Repository for Git collaboration workflows, branching, and merging practice.",
+            "technologies": "Git, GitHub, Collaboration",
+            "image": "assets/images/github_training.png",
+            "link": "https://github.com/Sukheshram14/GitHub_Training"
+        }
+    ],
+    "certificates": [
+        {
+            "title": "Ethos 2024 Participation",
+            "issuer": "IIT Guwahati & Unstop",
+            "date": "2024",
+            "link": "https://drive.google.com/open?id=13R8ZWUJFL64vmkahmdXZhsF85_tq9yOJ",
+            "icon": "award"
+        },
+        {
+            "title": "Study Abroad – Empower Your Future Beyond Borders",
+            "issuer": "Youth United Council of India (YUCI)",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1z_RPiZkvi5wUqDgXoiQEYrYDNHVC4ISd",
+            "icon": "award"
+        },
+        {
+            "title": "Certificate of Appreciation",
+            "issuer": "DevTown",
+            "date": "2024",
+            "link": "https://drive.google.com/file/d/1oV742H3wjGRmTRQ5IJ44cVibvHfdFBX4",
+            "verifyLink": "https://cert.devtown.in/verify/Z1m0ikj",
+            "icon": "award"
+        },
+        {
+            "title": "Front End Web Development",
+            "issuer": "IBM SkillsBuild & Edunet",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1iD6zsowUy_5Z05xfdok8mNfDM-wUKzzF",
+            "icon": "code"
+        },
+        {
+            "title": "Front End Web Development Internship",
+            "issuer": "AICTE & Edunet Foundation",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1CRN0FiOcVMiHyGY8mePOFH4iqFYqNJat",
+            "icon": "code"
+        },
+        {
+            "title": "RPA Design and Development v4.0",
+            "issuer": "UiPath Academic Alliance & MVIT",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1L8qrQNBXo0Px40fBw35JRDWn91UR4OMN",
+            "icon": "code"
+        },
+        {
+            "title": "CASTILO-25 Hackathon Achievement",
+            "issuer": "Manakula Vinayagar Institute of Technology",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1KiUcFw4vP_t2gI5BFbT3Yrudlk7yVwxq",
+            "icon": "code"
+        },
+        {
+            "title": "Online Quiz Competition on Basic Mathematics",
+            "issuer": "MIT MATH CLUB, MVIT",
+            "date": "2024",
+            "link": "https://drive.google.com/open?id=1Iyg-wZPRh9otuhEIrQhFTdBvNYpAfsvL",
+            "icon": "award"
+        },
+        {
+            "title": "Automation Developer Associate Training (v2024.10)",
+            "issuer": "UiPath",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1Oi_Ru-UCW5OnsC18XC2HTnImrqi5BCJj",
+            "icon": "code"
+        },
+        {
+            "title": "TCS CodeVita Season 12 Global Rank 2626",
+            "issuer": "TATA Consultancy Services",
+            "date": "2024",
+            "link": "https://drive.google.com/open?id=1TSdhZRg4AzH3TmejLmjo1m9D4eaz5AiH",
+            "icon": "code"
+        },
+        {
+            "title": "Frontend Developer (React)",
+            "issuer": "HackerRank",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1GY6hhwTt2fa_irBBGl312k9VFi9nM422",
+            "icon": "code"
+        },
+        {
+            "title": "Git for Beginners",
+            "issuer": "Udemy",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1gwCnNT0V7_cFtkfuXyCNYAjCWGOjDA9W",
+            "verifyLink": "https://ude.my/UC-b0f7a9c2-e1ec-44ee-af72-920e056cda03",
+            "icon": "code"
+        },
+        {
+            "title": "Getting Started with Artificial Intelligence",
+            "issuer": "IBM SkillsBuild",
+            "date": "2026",
+            "link": "https://drive.google.com/open?id=1FX3Cq53wfDbNg5BTc3liS9d53OeWIT-J",
+            "verifyLink": "https://www.credly.com/badges/2713495d-e8eb-40b9-bc6b-62686528e655",
+            "icon": "award"
+        },
+        {
+            "title": "Introduction to Numpy",
+            "issuer": "Simplilearn SkillUP",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1zzwaTi2itA5mGqr8syXuA6azFu-3ZVbD",
+            "icon": "code"
+        },
+        {
+            "title": "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+            "issuer": "Oracle University",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1ymBZBIIEfrLp0x1skgBgzusyFn3AkeCz",
+            "icon": "award"
+        },
+        {
+            "title": "Freedom with AI Masterclass",
+            "issuer": "Freedom with AI",
+            "date": "2024",
+            "link": "https://drive.google.com/open?id=1N-9y2E247DPeqt1t0oCxQbZSuloh-Eaq",
+            "icon": "award"
+        },
+        {
+            "title": "Dr. Kalam Young Achiever Award 2025",
+            "issuer": "World Youth Federation",
+            "date": "2025",
+            "link": "https://drive.google.com/file/d/1zK7xf-PwBDYdZM3IlOgKq9-ojsKZoxtM",
+            "icon": "award"
+        },
+        {
+            "title": "Hackathon - Puduvai Youth Fest 2026",
+            "issuer": "Sustainable Development Council & UNESCO",
+            "date": "2026",
+            "link": "https://drive.google.com/open?id=18W0jeMFaGH-WtBoslc7oEylhXn0IYmE3&usp=drive_copy",
+            "icon": "award"
+        },
+        {
+            "title": "MERN Stack Intern",
+            "issuer": "UptoSkills Company",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1y8VFWOrS-uUoCyWx7CtCqjJt9zs7124u",
+            "verifyLink": "mailto:hr@uptoskills.com",
+            "icon": "code"
+        },
+        {
+            "title": "Python 3.4.3 Training",
+            "issuer": "Spoken Tutorial, IIT Bombay",
+            "date": "2024",
+            "link": "https://drive.google.com/open?id=1rHETfA5hvjPxCmapySm2Ato-g3ZHmtKH",
+            "icon": "code"
+        },
+        {
+            "title": "JavaScript Training",
+            "issuer": "EduPyramids, SINE, IIT Bombay",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1o6kF3VbggHrZJsnS23T6RNVRvdhzImVP",
+            "icon": "code"
+        },
+        {
+            "title": "StratVerse: A Pop Culture Strategy Quiz - First Position",
+            "issuer": "Wazir - IIM Rohtak",
+            "date": "2025",
+            "link": "https://drive.google.com/open?id=1vSU3aJ9fIw1gv1A0BnM4MvEj1EO4f_tb",
+            "icon": "award"
+        },
+        {
+            "title": "IoT & Smart Systems Participant",
+            "issuer": "External Provider",
+            "date": "2024",
+            "link": "https://drive.google.com/open?id=1WQ_WH2pXHd1BAo11fglumegKtlvCm9NQ",
+            "icon": "code"
+        },
+        {
+            "title": "Workshop - VelTech University",
+            "issuer": "VelTech University",
+            "date": "2024",
+            "link": "https://drive.google.com/open?id=1zKiEQC5YnxDHm8l0jLvtURDbEbS0y_iy",
+            "icon": "award"
+        },
+        {
+            "title": "Frontend Fusion Excellence",
+            "issuer": "Datanerdz.ai",
+            "date": "2024",
+            "link": "https://drive.google.com/open?id=12gj18eeMpE5b8xK6DnWTK7gOz3VcnBT7",
+            "icon": "code"
+        },
+        {
+            "title": "HP Power Lab 2.0 participation",
+            "issuer": "HP",
+            "date": "2024",
+            "link": "https://drive.google.com/open?id=1ylgQ8oCQa1KKBc2stOf2vNeiP6LviABq",
+            "icon": "award"
+        },
+        {
+            "title": "Web Development (React)",
+            "issuer": "Scalar",
+            "date": "2024",
+            "link": "https://drive.google.com/open?id=1Tdf5g6cpB8H1z5o_9oHVUC2hQeFx-wg2",
+            "icon": "code"
+        },
+        {
+            "title": "SMVEC Hackathon",
+            "issuer": "Manakula Vinayagar Institute of Technology",
+            "date": "2024",
+            "link": "https://drive.google.com/file/d/1bhyVf5pVgsG7DSxQ_TOaMzW79UIAbyel",
+            "icon": "code"
+        }
+    ],
+    "contact": {
+        "email": "sukheshram14aug2006@gmail.com",
+        "phone": "Available on Request",
+        "location": "India",
+        "social": [
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/sukheshram1408",
+                "icon": "linkedin"
+            },
+            {
+                "name": "GitHub",
+                "link": "https://github.com/Sukheshram14",
+                "icon": "github"
+            }
+        ],
+        "form": {
+            "nameLabel": "Name",
+            "emailLabel": "Email",
+            "messageLabel": "Message",
+            "submitText": "Send Message"
+        }
+    }
+}

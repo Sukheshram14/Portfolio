@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title"></title> <!-- Dynamic -->
+    <meta name="description" content="Personal Portfolio">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4B0082">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="mist-spinner"></div>
+        <p>Orchestrating Logic...</p>
+    </div>
+
+    <!-- Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <!-- Header / Navbar -->
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="#home" id="logo" class="logo"></a>
+        </div>
+        <button id="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-nav" class="nav-menu">
+            <ul id="nav-list"></ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero-section">
+            <div id="slider-container" class="slider-bg"></div>
+            <div class="hero-content-wrapper">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 id="hero-name"></h1>
+                    <p id="hero-tagline" class="tagline"></p>
+                    <div id="hero-buttons" class="cta-buttons"></div>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <span></span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-container reveal">
+            <div class="container">
+                <h2 class="section-title" id="title-about">About Me</h2>
+                <div class="about-content">
+                    <div class="bio-card card-hover">
+                        <p id="about-bio"></p>
+                    </div>
+                    <div class="objective-card card-hover">
+                        <h3 id="subtitle-objective">Career Objective</h3>
+                        <p id="about-objective"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section (Journey) -->
+        <section id="services" class="section-container reveal">
+            <!-- Using id="services" to match data.json "Journey" link -->
+            <div class="container">
+                <h2 class="section-title">My Journey</h2>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    <div id="merged-timeline" class="timeline-items">
+                        <!-- Timeline items injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-container reveal">
+            <div class="container">
+                <h2 class="section-title" id="title-skills">Skills</h2>
+                <div id="skills-wrapper" class="skills-grid"></div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-container reveal">
+            <div class="container">
+                <h2 class="section-title" id="title-projects">Projects</h2>
+
+                <!-- Project Slider Container -->
+                <div class="project-slider-container-main">
+                    <button class="slider-arrow prev" aria-label="Previous Project">❮</button>
+                    <div class="project-slider-wrapper">
+                        <div id="projects-slider" class="project-slider">
+                            <!-- Project cards injected here -->
+                        </div>
+                    </div>
+                    <button class="slider-arrow next" aria-label="Next Project">❯</button>
+                </div>
+
+                <div class="slider-controls">
+                    <div id="slider-dots" class="slider-dots"></div>
+                    <p class="drag-hint">← Drag or Swipe to Explore →</p>
+                    <div class="view-more-container">
+                        <a href="https://github.com/Sukheshram14?tab=repositories" target="_blank"
+                            class="view-more-btn">
+                            View All Projects on GitHub ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="section-container reveal">
+            <div class="container">
+                <h2 class="section-title">My <span>Achievements</span></h2>
+                <div class="certificate-grid" id="certificate-grid">
+                    <!-- Certificates Injected Here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-container reveal">
+
+            <div class="container">
+                <h2 class="section-title" id="title-contact"></h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <span class="icon">📧</span>
+                            <span id="contact-email"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">📞</span>
+                            <span id="contact-phone"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">📍</span>
+                            <span id="contact-location"></span>
+                        </div>
+                    </div>
+
+                    <form id="contact-form" class="royal-form">
+                        <!-- Key is injected dynamically via main.js -->
+
+
+                        <div class="form-group">
+                            <label for="name" id="label-name"></label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" id="label-email"></label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" id="label-message"></label>
+                            <textarea name="message" id="message" rows="5" required></textarea>
+                        </div>
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                        <!-- hCaptcha Widget -->
+                        <div class="h-captcha" data-captcha="true"></div>
+
+                        <button type="submit" id="submit-btn" class="btn btn-primary"></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="royal-footer">
+        <div class="container">
+            <p id="footer-text"></p>
+        </div>
+    </footer>
+
+    <!-- Certificate Modal -->
+    <div id="cert-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modal-img" src="" alt="Certificate Preview">
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+</body>
+
+</html>
