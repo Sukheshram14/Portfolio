@@ -374,7 +374,6 @@
             "issuer": "UptoSkills Company",
             "date": "2025",
             "link": "https://drive.google.com/open?id=1y8VFWOrS-uUoCyWx7CtCqjJt9zs7124u",
-            "verifyLink": "mailto:hr@uptoskills.com",
             "icon": "code"
         },
         {
@@ -439,7 +438,16 @@
             "date": "2024",
             "link": "https://drive.google.com/file/d/1bhyVf5pVgsG7DSxQ_TOaMzW79UIAbyel",
             "icon": "code"
+        },
+        {
+            "title": "AWS Academy Graduate - Cloud Foundations - Training Badge",
+            "issuer": "AWS Academy",
+            "date": "01/24/2026",
+            "link": "https://drive.google.com/file/d/1wU1bjNeK0Dpw1eYyUvY9baRQvU85QRxH",
+            "verifyLink": "https://www.credly.com/badges/ec1fcb73-e90b-4127-a313-ef3545087d17/public_url",
+            "icon": "certificate"
         }
+
     ],
     "contact": {
         "email": "sukheshram14aug2006@gmail.com",
