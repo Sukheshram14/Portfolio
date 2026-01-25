@@ -261,7 +261,12 @@ function googleDrivePreview(url) {
 // NEW: Certificates Renderer
 function renderCertificates(certData) {
     const grid = document.getElementById('certificate-grid');
-    if (!grid || !certData) return;
+    if (!grid) return;
+    // Fallback if no cert data
+    if (!certData || !Array.isArray(certData)) {
+        grid.innerHTML = '<p style="text-align:center; color:#888;">No certificates found.</p>';
+        return;
+    }
 
     grid.innerHTML = certData.map(cert => {
         const previewImg = googleDrivePreview(cert.link);
@@ -571,6 +576,7 @@ function setupScrollReveal() {
 }
 
 // NEW: Advanced Project Slider (Arrows + Dots)
+// NEW: Advanced Project Slider (Arrows + Dots)
 function setupProjectSlider() {
     const slider = document.getElementById('projects-slider');
     const dotsContainer = document.getElementById('slider-dots');
@@ -583,7 +589,7 @@ function setupProjectSlider() {
     const cards = Array.from(slider.children);
     if(cards.length === 0) return;
     
-    const cardWidth = cards[0].offsetWidth + 32; // width + gap
+    const cardWidth = cards[0].offsetWidth + 0; // Gap is 0 in CSS
     const realCardsCount = cards.length - (clonesCount * 2);
 
     // Initial Scroll Position (Skip initial clones)
@@ -595,6 +601,7 @@ function setupProjectSlider() {
         const dot = document.createElement('div');
         dot.className = i === 0 ? 'dot active' : 'dot';
         dot.addEventListener('click', () => {
+             // Explicit smooth scroll for navigation
              slider.scrollTo({ left: cardWidth * (i + clonesCount), behavior: 'smooth' });
              resetAutoPlay();
         });
@@ -603,35 +610,62 @@ function setupProjectSlider() {
     
     // Seamless Jump Logic
     let isJumping = false;
-    slider.addEventListener('scroll', () => {
+    
+    const handleScroll = () => {
         if (isJumping) return;
 
         const currentScroll = slider.scrollLeft;
-        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        
+        // Calculate thresholds based on clone width
+        const minScroll = cardWidth * (clonesCount - 1); // Buffer 
+        const maxScroll = cardWidth * (realCardsCount + clonesCount + 1);
 
         // Jump from beginning (clones) to end (real)
-        if (currentScroll <= cardWidth * (clonesCount - 2)) {
+        if (currentScroll <= 0) {
             isJumping = true;
-            slider.scrollLeft = currentScroll + (cardWidth * realCardsCount);
+            // Instant Jump without behavior: smooth
+            slider.scrollLeft = cardWidth * realCardsCount; // + currentScroll if needed for precision, but 0 is safe
             setTimeout(() => isJumping = false, 50);
-        } 
+        }
+        else if (currentScroll <= cardWidth) {
+             // Near start, check if we need to jump to end for seamless feel
+             // Actually, the simple logic is: if scrollLeft < cardWidth * clonesCount (first real card), 
+             // we are in pre-clones. 
+             // The critical point is 0.
+        }
+
         // Jump from end (clones) to beginning (real)
-        else if (currentScroll >= maxScroll - cardWidth * (clonesCount - 2)) {
+        // If we scrolled past the last real card into the post-clones
+        if (currentScroll >= cardWidth * (realCardsCount + clonesCount)) {
             isJumping = true;
-            slider.scrollLeft = currentScroll - (cardWidth * realCardsCount);
+            // Instant Jump
+            slider.scrollLeft = cardWidth * clonesCount;
             setTimeout(() => isJumping = false, 50);
+        }
+        // If we scrolled BACKWARDS into the pre-clones
+        else if (currentScroll <= cardWidth * (clonesCount - 1)) {
+             isJumping = true;
+             slider.scrollLeft = cardWidth * (realCardsCount + clonesCount - 1);
+             setTimeout(() => isJumping = false, 50);
         }
 
         // Sync Dots
-        const realIndex = Math.round((slider.scrollLeft / cardWidth) - clonesCount);
-        const activeIndex = (realIndex % realCardsCount + realCardsCount) % realCardsCount;
+        const rawIndex = (slider.scrollLeft / cardWidth) - clonesCount;
+        let activeIndex = Math.round(rawIndex);
+        
+        // Normalize
+        if (activeIndex < 0) activeIndex = realCardsCount - 1;
+        if (activeIndex >= realCardsCount) activeIndex = 0;
         
         document.querySelectorAll('.dot').forEach((d, i) => {
             d.classList.toggle('active', i === activeIndex);
         });
-    });
+    };
+
+    slider.addEventListener('scroll', handleScroll);
     
     // Arrow Logic
+    // Use behavior: 'smooth' because we excised it from CSS
     if(prevBtn) prevBtn.addEventListener('click', () => {
         slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
         resetAutoPlay();
@@ -642,7 +676,7 @@ function setupProjectSlider() {
         resetAutoPlay();
     });
     
-    // Drag Logic
+    // Drag Logic (Mouse)
     let isDown = false;
     let startX;
     let scrollLeft;

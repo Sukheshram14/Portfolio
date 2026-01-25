@@ -673,7 +673,7 @@ body.hovering #custom-cursor {
     scroll-snap-type: x mandatory;
     padding: 0;
     scrollbar-width: none;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth;  <-- REMOVED to allow instant JS jumping */
     height: 100%;
 }
 
@@ -958,7 +958,7 @@ body.hovering #custom-cursor {
    ========================================= */
 .certificate-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     padding: 1rem 0;
 }
@@ -1376,6 +1376,7 @@ textarea:focus {
 .hidden {
     display: none !important;
 }
+
 /* =========================================
    hCAPTCHA STYLING
    ========================================= */
