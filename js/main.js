@@ -562,18 +562,7 @@ function setupMobileMenu() {
     });
 }
 
-function setupScrollReveal() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) entry.target.classList.add('active');
-        });
-    }, { threshold: 0.1 });
-    
-    document.querySelectorAll('.section-title, .bio-card, .objective-card, .timeline-content, .skill-category, .project-card').forEach(el => {
-        el.classList.add('reveal');
-        observer.observe(el);
-    });
-}
+
 
 // NEW: Advanced Project Slider (Arrows + Dots)
 // NEW: Advanced Project Slider (Arrows + Dots)
@@ -839,6 +828,12 @@ function setupScrollReveal() {
     });
 
     reveals.forEach(el => observer.observe(el));
+
+    // Also observe dynamically added certificates
+    document.querySelectorAll('.certificate-card').forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+    });
 }
 
 /**

@@ -67,11 +67,15 @@ html {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s var(--transition);
+    pointer-events: none;
+    /* Prevent ghost clicks */
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+    pointer-events: auto;
+    /* Restore clicks */
 }
 
 /* Specific Section Delays or Directions if needed */
