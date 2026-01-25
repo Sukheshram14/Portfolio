@@ -266,6 +266,8 @@ li {
     pointer-events: none;
     background: linear-gradient(to bottom, #0f1c13 0%, #1a2f23 100%);
     /* Fallback/Base */
+    transform: translateZ(0);
+    /* Force GPU Layer */
 }
 
 /* =========================================
@@ -325,6 +327,10 @@ body.hovering #custom-cursor {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     z-index: 5000;
     transition: all 0.3s ease;
+    will-change: transform;
+    /* Hint for GPU */
+    transform: translateZ(0);
+    /* Force Layer */
 }
 
 /* Ensure logo container doesn't block layout */
@@ -677,7 +683,8 @@ body.hovering #custom-cursor {
     scroll-snap-type: x mandatory;
     padding: 0;
     scrollbar-width: none;
-    /* scroll-behavior: smooth;  <-- REMOVED to allow instant JS jumping */
+    scroll-behavior: smooth;
+    /* Native smooth scroll for finite slider */
     height: 100%;
 }
 

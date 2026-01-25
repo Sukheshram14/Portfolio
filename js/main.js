@@ -224,19 +224,7 @@ function renderProjects(projectsData) {
         slider.appendChild(createCard(proj));
     });
 
-    // Clone first few and prepend last few for infinite loop
-    const clonesCount = 3;
-    const cards = Array.from(slider.children);
-    
-    // Append clones of first few
-    for(let i=0; i<clonesCount; i++) {
-        slider.appendChild(cards[i].cloneNode(true));
-    }
-    
-    // Prepend clones of last few
-    for(let i=0; i<clonesCount; i++) {
-        slider.insertBefore(cards[cards.length - 1 - i].cloneNode(true), slider.firstChild);
-    }
+    // Finite Scrolling: No cloning needed.
 }
 
 // Helper to convert GDrive View link to Direct Image Preview
@@ -566,6 +554,7 @@ function setupMobileMenu() {
 
 // NEW: Advanced Project Slider (Arrows + Dots)
 // NEW: Advanced Project Slider (Arrows + Dots)
+// NEW: Finite Project Slider (Standard Behavior)
 function setupProjectSlider() {
     const slider = document.getElementById('projects-slider');
     const dotsContainer = document.getElementById('slider-dots');
@@ -574,87 +563,65 @@ function setupProjectSlider() {
     
     if(!slider) return;
     
-    const clonesCount = 3;
     const cards = Array.from(slider.children);
     if(cards.length === 0) return;
     
-    const cardWidth = cards[0].offsetWidth + 0; // Gap is 0 in CSS
-    const realCardsCount = cards.length - (clonesCount * 2);
+    // Gap is 0 in CSS
+    const cardWidth = cards[0].offsetWidth; 
 
-    // Initial Scroll Position (Skip initial clones)
-    slider.scrollLeft = cardWidth * clonesCount;
-    
-    // Create Dots for REAL projects only
+    // Create Dots
     dotsContainer.innerHTML = '';
-    for(let i=0; i<realCardsCount; i++) {
+    cards.forEach((_, i) => {
         const dot = document.createElement('div');
         dot.className = i === 0 ? 'dot active' : 'dot';
         dot.addEventListener('click', () => {
-             // Explicit smooth scroll for navigation
-             slider.scrollTo({ left: cardWidth * (i + clonesCount), behavior: 'smooth' });
+             slider.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
              resetAutoPlay();
         });
         dotsContainer.appendChild(dot);
-    }
+    });
     
-    // Seamless Jump Logic
-    let isJumping = false;
-    
-    const handleScroll = () => {
-        if (isJumping) return;
-
-        const currentScroll = slider.scrollLeft;
+    // Update UI State (Dots & Arrows)
+    const updateUI = () => {
+        const index = Math.round(slider.scrollLeft / cardWidth);
         
-        // Calculate thresholds based on clone width
-        const minScroll = cardWidth * (clonesCount - 1); // Buffer 
-        const maxScroll = cardWidth * (realCardsCount + clonesCount + 1);
-
-        // Jump from beginning (clones) to end (real)
-        if (currentScroll <= 0) {
-            isJumping = true;
-            // Instant Jump without behavior: smooth
-            slider.scrollLeft = cardWidth * realCardsCount; // + currentScroll if needed for precision, but 0 is safe
-            setTimeout(() => isJumping = false, 50);
-        }
-        else if (currentScroll <= cardWidth) {
-             // Near start, check if we need to jump to end for seamless feel
-             // Actually, the simple logic is: if scrollLeft < cardWidth * clonesCount (first real card), 
-             // we are in pre-clones. 
-             // The critical point is 0.
-        }
-
-        // Jump from end (clones) to beginning (real)
-        // If we scrolled past the last real card into the post-clones
-        if (currentScroll >= cardWidth * (realCardsCount + clonesCount)) {
-            isJumping = true;
-            // Instant Jump
-            slider.scrollLeft = cardWidth * clonesCount;
-            setTimeout(() => isJumping = false, 50);
-        }
-        // If we scrolled BACKWARDS into the pre-clones
-        else if (currentScroll <= cardWidth * (clonesCount - 1)) {
-             isJumping = true;
-             slider.scrollLeft = cardWidth * (realCardsCount + clonesCount - 1);
-             setTimeout(() => isJumping = false, 50);
-        }
-
-        // Sync Dots
-        const rawIndex = (slider.scrollLeft / cardWidth) - clonesCount;
-        let activeIndex = Math.round(rawIndex);
-        
-        // Normalize
-        if (activeIndex < 0) activeIndex = realCardsCount - 1;
-        if (activeIndex >= realCardsCount) activeIndex = 0;
-        
+        // Dots
         document.querySelectorAll('.dot').forEach((d, i) => {
-            d.classList.toggle('active', i === activeIndex);
+             d.classList.toggle('active', i === index);
         });
+
+        // Arrows (Finite State)
+        if(prevBtn) {
+            prevBtn.style.opacity = index <= 0 ? '0.3' : '1';
+            prevBtn.style.pointerEvents = index <= 0 ? 'none' : 'auto';
+        }
+        if(nextBtn) {
+            prevBtn.style.opacity = index >= cards.length - 1 ? '0.3' : '1'; 
+            // Typo fix: nextBtn style
+            nextBtn.style.opacity = index >= cards.length - 1 ? '0.3' : '1';
+            nextBtn.style.pointerEvents = index >= cards.length - 1 ? 'none' : 'auto';
+        }
     };
 
-    slider.addEventListener('scroll', handleScroll);
+    // Scroll Listener
+    // Use simple throttling if needed, but native scroll is efficient enough usually.
+    // We'll use RAF just to be safe and consistent with previous optimizations.
+    let isScrolling = false;
+    slider.addEventListener('scroll', () => {
+        if(!isScrolling) {
+            window.requestAnimationFrame(() => {
+                updateUI();
+                isScrolling = false;
+            });
+            isScrolling = true;
+        }
+    });
     
+    // Initial UI check
+    updateUI();
+
     // Arrow Logic
-    // Use behavior: 'smooth' because we excised it from CSS
+    // Native smooth scroll handles the animation
     if(prevBtn) prevBtn.addEventListener('click', () => {
         slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
         resetAutoPlay();
@@ -695,13 +662,19 @@ function setupProjectSlider() {
         slider.scrollLeft = scrollLeft - walk;
     });
 
-    // Auto Play Logic
+    // Auto Play Logic (Finite: Rewind to start)
     let autoPlayInterval;
     
     function startAutoPlay() {
         stopAutoPlay();
         autoPlayInterval = setInterval(() => {
-            slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            const maxScroll = slider.scrollWidth - slider.clientWidth;
+            if(slider.scrollLeft >= maxScroll - 10) {
+                 // Rewind to start
+                 slider.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                 slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            }
         }, 4000); 
     }
 
@@ -717,6 +690,7 @@ function setupProjectSlider() {
     startAutoPlay();
     slider.addEventListener('mouseenter', stopAutoPlay);
 }
+
 
 // NEW: Custom Cursor Logic
 function setupCustomCursor() {
