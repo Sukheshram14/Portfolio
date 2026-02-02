@@ -452,9 +452,18 @@
             "issuer": "GUVI | HCL (Google for Education Partner)",
             "date": "01/25/2026",
             "link": "https://drive.google.com/file/d/1jVKQp47Ml7-ODoS2JZaRlab3jAe4LhmM",
-            "verifyLink": "https://www.guvi.in/certificate?id=25g0761QI1kE39OR4r6",
+            "verifyLink": "https://www.guvi.in/share-certificate/25g0761Q1kE39OR4r6",
+            "icon": "certificate"
+        },
+        {
+            "title": "Build & Deploy Apps with Google AI Studio & Multilingual AI Speech App with Vibe Coding",
+            "issuer": "GUVI | HCL (Google for Education Partner)",
+            "date": "01/25/2026",
+            "link": "https://drive.google.com/file/d/1pLupLenJGbR3YQ0mJU2JqayX6XFtcBIB",
+            "verifyLink": "https://www.guvi.in/share-certificate/25g0761Q1kE39OR4r6",
             "icon": "certificate"
         }
+
     ],
     "contact": {
         "email": "sukheshram14aug2006@gmail.com",
