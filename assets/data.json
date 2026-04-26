@@ -195,13 +195,6 @@
             "link": "https://github.com/Sukheshram14/DSA"
         },
         {
-            "title": "URL Shortener",
-            "description": "Lightweight, secure URL shortening service in Java using efficient string hashing.",
-            "technologies": "Java, Core Java, Hashing",
-            "image": "assets/images/url_shortener.png",
-            "link": "https://github.com/Sukheshram14/Java-MiniProject-UrlShortener"
-        },
-        {
             "title": "Auth System",
             "description": "Secure authentication system using Node.js, Express, and MongoDB with JWT sessions.",
             "technologies": "Node.js, Express.js, JWT",
