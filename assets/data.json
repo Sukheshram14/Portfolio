@@ -173,22 +173,6 @@
             ]
         },
         {
-            "title": "Portfolio Website V1",
-            "description": "Personal showcase built with React.js and Vite, highlighting skills and achievements.",
-            "technologies": "React, Vite, UI/UX",
-            "image": "assets/images/portfolio_website.png",
-            "link": "https://github.com/Sukheshram14/Sukhesh-Ram-Portfolio",
-            "liveLink": "https://sukhesh-ram-portfolio.vercel.app/"
-        },
-        {
-            "title": "Quote Vault",
-            "description": "A React-based application that fetches quotes from a public API and displays them dynamically with a clean, responsive UI built using Tailwind CSS.",
-            "technologies": "React.js, JavaScript, REST API, Tailwind CSS",
-            "image": "assets/images/quote_vault.png",
-            "link": "https://github.com/Sukheshram14/Quote-Vault",
-            "liveLink": "https://quote-vault-eight.vercel.app/"
-        },
-        {
             "title": "Clever FOX",
             "description": "Modern, responsive multipage website focused on clean structure and smooth animations.",
             "technologies": "HTML, CSS, JavaScript, UX",
