@@ -1,9 +1,9 @@
 {
     "site": {
-        "title": "Sukhesh Ram | AI-Augmented Developer",
-        "logoText": "SukheshRam.Dev",
-        "footerText": "© 2026 S Sukhesh Ram. Orchestrating Code with AI.",
-        "contactKey": "afd7360a-6e1e-4984-8d25-485187432a47"
+        "title": "Sukhesh Ram | AI Automation & Backend Developer",
+        "logoText": "SukheshRam.Dev", 
+        "footerText": "© 2026 S Sukhesh Ram. Building AI-Powered Software & Automation.",
+        "contactKey": "afd7360a-6e1e-4984-8d25-485187432a47" 
     },
     "navigation": [
         {
@@ -37,7 +37,7 @@
     ],
     "home": {
         "name": "S Sukhesh Ram",
-        "tagline": "AI-AUGMENTED DEVELOPER",
+        "tagline": "AI AUTOMATION & BACKEND DEVELOPER",
         "buttons": [
             {
                 "text": "View Work",
@@ -55,8 +55,8 @@
         ]
     },
     "about": {
-        "bio": "A modern developer and AI-augmented technologist specializing in rapid prototyping and high-speed digital builds. I bridge the gap between complex logic and visual design by leveraging AI to orchestrate the MERN stack, ensuring that every system is built with efficiency, precision, and a focus on clean architecture.",
-        "objective": "Transforming complex ideas into functional realities at the speed of thought.",
+        "bio": "B.Tech Computer Science student focused on AI automation, applied AI, and backend development. I build practical software using Python, n8n, REST APIs, LLMs, RAG, LangChain, with a strong interest in turning complex workflows into reliable, usable applications.", 
+        "objective": "Building practical AI-powered applications, automated workflows, and scalable backend systems.",
         "image": "assets/images/user-profile.jpg",
         "resumeLink": "#"
     },
@@ -88,54 +88,72 @@
             "org": "CASTILO-25 Hackathon",
             "year": "2024",
             "icon": "🚀"
-        }
+        },
+        { 
+            "type": "achievement",
+            "title": "DecodeX 2026 Finalist",
+            "org": "National Level Analytics Hackathon",
+            "year": "2026", 
+            "icon": "🏆" 
+        },
+        {
+            "type": "experience",
+            "title": "Head of Technical Team",
+            "org": "X’O CODE 2026 Hackathon",
+            "year": "September 2026",
+            "icon": "⚙️"
+        },
+
     ],
     "skills": {
-        "Strategic Logic": [
-            {
-                "name": "Problem Decomposition",
-                "level": "High Proficiency"
-            },
-            {
-                "name": "Logic & Algorithms (Java/Python)",
-                "level": "Core Foundation"
-            },
-            {
-                "name": "System Architecture",
-                "level": "Conceptual"
-            }
+        "Strategic Logic": [ 
+            { 
+                "name": "Problem Solving", 
+                "level": "Strong" 
+            }, 
+            { "name": "Data Structures & Algorithms", 
+                "level": "Core Foundation" 
+            }, 
         ],
         "AI-Driven Development": [
             {
-                "name": "MERN Stack Orchestration",
-                "level": "AI-Augmented"
-            },
+                "name": "Python", 
+                "level": "Core" 
+            }, 
+            { 
+                "name": "n8n & Workflow Automation", 
+                "level": "Working Knowledge" 
+            }, 
+            { 
+                "name": "LLM Applications & RAG", 
+                "level": "Project Experience"
+            }, 
             {
-                "name": "Prompt Engineering",
-                "level": "Expert"
-            },
-            {
-                "name": "Rapid Prototyping",
-                "level": "Advanced"
-            },
-            {
-                "name": "AI Debugging & Refactoring",
-                "level": "High Speed"
-            }
+                "name": "LangChain", 
+                "level": "Project Experience" 
+            }, 
+            { 
+                "name": "Prompt Engineering", 
+                "level": "Working Knowledge" 
+            } 
         ],
         "Professional Agility": [
             {
-                "name": "Solution-Oriented Research",
-                "level": "Expert"
-            },
+                "name": "REST APIs & Integrations",
+                "level": "Working Knowledge" 
+            }, 
             {
-                "name": "Git & GitHub Workflow",
-                "level": "Proficient"
-            },
-            {
-                "name": "Creative Collaboration",
-                "level": "High Performance"
-            }
+                "name": "SQL & Databases",
+                "level": "Foundational" 
+            }, 
+            { 
+                "name": "Git & GitHub",
+                "level": "Proficient" 
+            }, 
+            { 
+                "name": "Technical Research & Problem Solving", 
+                "level": "Strong" 
+            } 
         ]
     },
     "projects": [
