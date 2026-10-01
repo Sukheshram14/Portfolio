@@ -102,7 +102,7 @@
             "org": "X’O CODE 2026 Hackathon",
             "year": "September 2026",
             "icon": "⚙️"
-        },
+        }
 
     ],
     "skills": {
@@ -113,7 +113,7 @@
             }, 
             { "name": "Data Structures & Algorithms", 
                 "level": "Core Foundation" 
-            }, 
+            }
         ],
         "AI-Driven Development": [
             {
